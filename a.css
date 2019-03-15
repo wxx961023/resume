@@ -8,6 +8,7 @@ a {
     text-decoration: none;
 }
 body {
+    .
     background: black;
     color: white;
     padding: 0;
@@ -20,28 +21,26 @@ body {
 }
 
 .topNavBar .logo {
-    font-size: 28px;
     font-family: "Arial Black";
+    font-size: 28px;
 }
 .topNavBar .logo .rs {
     margin: 4px;
     color: #e6686a;
 }
 .topNavBar .logo .card {
-    margin: 4px;
     color: #9A9DA2;
 }
 
 .topNavBar nav {
     font-size: 15px;
-    padding-top: 2px;
 }
 .topNavBar nav ul {
     list-style: none; 
     margin: 0; 
     padding: 0;  
 }
-.topNavBar nav ul>li {
+.topNavBar nav li {
     float: left;
     margin-left: 17px;
     margin-right: 17px;
@@ -49,13 +48,14 @@ body {
 .topNavBar nav a {
     color: #b7b7b7;
     font-weight: bold;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 3px;
     display: block;
 }
-.topNavBar > nav > ul > li > a:hover {
+.topNavBar nav a {
+    border-bottom: 3px solid transparent;
+}
+.topNavBar nav a:hover {
     border-bottom: 3px solid #e06567;
 }
 
