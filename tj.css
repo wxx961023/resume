@@ -1,0 +1,36 @@
+body {
+    background: grey;
+    margin: 0;
+    padding: 0;
+}
+
+.taiJi {
+    margin:100px auto;
+    width: 0px;
+    height: 600px;
+    border-left: 300px solid white;
+    border-right: 300px solid black;
+    border-radius:100%;
+}
+
+.taiJi::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 100px solid black;
+    border-radius:100%;
+    margin-left: -150px;
+}
+
+.taiJi::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: black;
+    border: 100px solid white;
+    border-radius:100%;
+    margin-left: -150px;
+}
