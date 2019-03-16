@@ -151,10 +151,23 @@ hr {
 
 .userCard > footer.media {
     background: #E6686A;
+    text-align: center;
 }
-
+.userCard > footer.media >a {
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    border-radius: 50%;
+    margin: 16px;
+}
+.userCard > footer.media >a:hover {
+    background: #CF5D5F;
+}
 .userCard svg {
     width: 30px;
     height: 30px;
     fill: white;
+    vertical-align: top;
+    margin: 0 16px;
 }
