@@ -3,58 +3,82 @@
 	<head>
 		<title>我的个人简历</title>
 		<link rel="stylesheet" href="./a.css">
+		<script src="//at.alicdn.com/t/font_1091502_p95k8z11c.js"></script>
+		<style type="text/css">
+			.icon {
+			   width: 1em; height: 1em;
+			   vertical-align: -0.15em;
+			   fill: currentColor;
+			   overflow: hidden;
+			}
+		</style>
 	</head>
+
 	<body>
-		<div class="topNavBar clearfix">
-			<a class="logo" href="#" alt="logo" style="float: left;">
-				<span class="rs">RS</span><span class="card">card</span>
-			</a>
-			<nav style="float: right;">
-				<ul class="clearfix">
-					<li><a href="#">关于</a></li>
-					<li><a href="#">技能</a></li>
-					<li><a href="#">作品</a></li>
-					<li><a href="#">博客</a></li>
-					<li><a href="#">日历</a></li>
-					<li><a href="#">联系方式</a></li>
-					<li><a href="#">其他</a></li>
-				</ul>
-			</nav>
+		<div class="topNavBar ">
+			<div class="topNavBar-inner clearfix">
+				<a class="logo" href="#" alt="logo" style="float: left;">
+					<span class="rs">RS</span><span class="card">card</span>
+				</a>
+				<nav style="float: right;">
+					<ul class="clearfix">
+						<li><a href="#">关于</a></li>
+						<li><a href="#">技能</a></li>
+						<li><a href="#">作品</a></li>
+						<li><a href="#">博客</a></li>
+						<li><a href="#">日历</a></li>
+						<li><a href="#">联系方式</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
-		<div class="banner" style="background-image: url(#)"></div>
+		<!-- 第二部分的内容 -->
+		<div class="banner">
+			<div class="mask"></div>
+		</div>
 		<main>
-			<div class="card">
-				<div class="pictureAndText">
+			<!-- 头像部分内容 -->
+			<div class="userCard">
+				<div class="pictureAndText clearfix">
 					<div class="picture">
-					<img src="" alt="头像">
+					<img src="./img/avatar.jpg" width="299" height="347" alt="头像">
 					</div>
 					<div class="text">
-						<div class="profile">
-							<span class="welcome">Hello</span>
-							<h1>陈 光 展</h1>
-							<p>前 端 开 发 工 程 师</p>
-							<hr>
-							<dl>
-								<dt>年龄</dt>
-								<dd>18</dd>
-								<dt>所在城市</dt>
-								<dd>深圳</dd>
-								<dt>邮箱</dt>
-								<dd>764146802@qq.com</dd>
-								<dt>手机</dt>
-								<dd>15361584160</dd>
-							</dl>
-						</div>
+						<span class="welcome">Hello
+							<span class="triangle"></span>
+						</span>
+						<h1>陈 光 展</h1>
+						<p>前端开发工程师</p>
+						<hr>
+						<dl>
+							<dt>年龄</dt>
+							<dd>18</dd>
+							<dt>所在城市</dt>
+							<dd>深圳</dd>
+							<dt>邮箱</dt>
+							<dd>764146802@qq.com</dd>
+							<dt>手机</dt>
+							<dd>15361584160</dd>
+						</dl>
 					</div>
 				</div>
 				<footer class="media">
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
-					<a href="#"><img src="#" alt="..."></a>
+					<a href="#">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-github"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-weibo"></use>
+						</svg>
+					</a>
+					<a href="#">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-twitter"></use>
+						</svg>
+					</a>
 				</footer>
 			</div>
 
