@@ -91,33 +91,94 @@
 				目前在深圳建筑公司上班
 			</p>
 		</main>
-		<section>
+		<section class="skills">
 			<h2>技能</h2>
-			<ol>
-				<li>HTML 5 &amp; CSS 3</li>
-				<li>JavaScript</li>
-				<li>jQuery</li>
-				<li>Vue</li>
-				<li>React</li>
-				<li>HTTP</li>
+			<ol class="clearfix">
+				<li>
+					<h3>
+						HTML 5 &amp; CSS 3
+					</h3>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						JavaScript
+					</h3>
+					<div class="progressBar">
+						<div class="progress" style="width: 80%"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						jQuery
+					</h3>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						Vue.js
+					</h3>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						React.js
+					</h3>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</li>
+				<li>
+					<h3>
+						Node.js
+					</h3>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</li>
 			</ol>
 		</section>
-		<section>
+		<section class="portfolio">
 			<h2>作品集</h2>
 			<nav>
-				<ol>
-					<li>所有</li>
-					<li>框架</li>
-					<li>原生JS &amp; CSS</li>
+				<ol class="clearfix">
+					<li id="portfolio1">所有</li>
+					<li id="portfolio2">框架</li>
+					<li id="portfolio3">原生JS &amp; CSS</li>
 				</ol>
+				<div id="portfolioBar" class="bar state-1">
+					<div class="bar-inner"></div>
+				</div>
 			</nav>
-
-			<div class="jobs">
-				<div class="big"></div>
-				<div class="small"></div>
-				<div class="small"></div>
-			</div>
+			<script>
+				portfolio1.onclick = function(){
+					portfolioBar.className ='bar state-1'
+				}
+				portfolio2.onclick = function(){
+					portfolioBar.className ='bar state-2'
+				}
+				portfolio3.onclick = function(){
+					portfolioBar.className ='bar state-3'
+				}	
+			</script>
 			
+			<div class="works" style="height: 597px;">
+				<div class="big" style="top: 0; left: 0;">
+					<img src="./img/big.jpg" alt="作品1">
+				</div>
+				<div class="small" style="top: 0; left: 645px;">
+					<img src="./img/smallone.jpg" alt="作品2">
+				</div>
+				<div class="small" style="top: 300px; left: 645px;">
+					<img src="./img/smalltwo.jpg" alt="作品3">
+				</div>
+			</div>
 		</section>
 	
 	</body>
