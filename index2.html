@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>移动页面demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        ul,ol {
+            list-style: none;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: gray;
+            border-radius: 30px;
+        }
+
+        .clearfix::after {
+            content:'';
+            display:block;
+            clear: both;
+        }
+
+
+        .nav {
+            display: none;
+            background: gray;
+            margin-top: 10px;
+        }
+
+        header {
+            padding: 10px;
+            position: relative;
+        }
+        header > button{
+            position: absolute;
+            right: 20px;
+            top: 26px;
+        }
+        .nav.active {
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav2 {
+            display: none;
+        }
+        @media (min-width: 451px){
+            header > button{
+                display: none;
+            }
+            .nav, .nav.active{display: none;}
+            .nav2{
+                display: block;
+                display: flex;
+                margin-left: 20px;
+            }
+            header {
+                display: flex;
+                align-items: center;
+            }
+            header > .nav2 > li {
+                margin-left: 10px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <button id="xx">菜单</button>
+        <ul id="yy" class="nav">
+            <li><a href="#">导航1</a></li>
+            <li><a href="#">导航2</a></li>
+            <li><a href="#">导航3</a></li>
+            <li><a href="#">导航4</a></li>
+            <li><a href="#">导航5</a></li>
+        </ul>
+        <ul class="nav2">
+            <li><a href="#">导航1</a></li>
+            <li><a href="#">导航2</a></li>
+            <li><a href="#">导航3</a></li>
+            <li><a href="#">导航4</a></li>
+            <li><a href="#">导航5</a></li>
+        </ul>
+    </header>
+    <script>
+        xx.onclick = function(){
+            yy.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
