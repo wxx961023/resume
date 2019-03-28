@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度一下搜索框</title>
+    <link rel="styleSheet" href="./a.css">
+    <script src="//at.alicdn.com/t/font_1114632_q9z18eiodb.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: #b8b8b8;
+           overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="innerWrapper">
+            <input type="text">
+            <span class="floatDiv">
+                <svg class="icon">
+                    <use xlink:href="#icon-maikefeng"></use>
+                </svg>
+                <span class="splitLine"></span>
+                <svg class="icon">
+                    <use xlink:href="#icon-zhaoxiangji"></use>
+                </svg>
+            </span>
+        </div>
+        <button>百度一下</button>
+        <div class="suggestion">
+            <ul>
+                <li>选项1</li>
+                <li>选项2</li>
+                <li>选项3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

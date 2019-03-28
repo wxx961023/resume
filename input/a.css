@@ -1,0 +1,59 @@
+*{margin: 0; padding: 0;}
+*::before{margin: 0; padding: 0;}
+*::after{margin: 0; padding: 0;}
+*{
+    box-sizing: border-box;
+}
+ul,li {
+    list-style: none;
+}
+body {
+    border: 1px solid red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.splitLine {
+    border-left: 1px solid gray;
+    height: 16px;
+    margin: 0 10px;
+}
+.innerWrapper {
+    position: relative;
+    display: inline-block;/* 这个再绝对定位时候常用*/
+ 
+}
+
+.floatDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; 
+}
+
+.innerWrapper > input {
+    width: 540px;
+    height: 35px;
+    padding: 8px;
+ 
+}
+
+svg.icon {
+    width: 20px;
+    height: 20px; 
+    fill: #b8b8b8;
+}
+svg.icon:hover {
+    fill: #4b94fc;
+    cursor: pointer;
+}
+.suggestion {
+    display: none;
+}
