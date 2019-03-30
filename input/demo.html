@@ -19,7 +19,7 @@
 <body>
     <div class="wrapper">
         <div class="innerWrapper">
-            <input type="text">
+            <input id="keyword" type="text">
             <span class="floatDiv">
                 <svg class="icon">
                     <use xlink:href="#icon-maikefeng"></use>
@@ -31,13 +31,22 @@
             </span>
         </div>
         <button>百度一下</button>
-        <div class="suggestion">
-            <ul>
-                <li>选项1</li>
-                <li>选项2</li>
-                <li>选项3</li>
-            </ul>
-        </div>
+        <ul id="suggestion" class="suggestion">
+            <li>选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+        </ul>
     </div>
+    <script>
+        var suggestion = document.querySelector('#suggestion');
+        var keyword = document.querySelector('#keyword');
+          keyword.oninput = function (e){
+              if(e.target.value){
+                  suggestion.classList.add('active');
+              }else{
+                  suggestion.classList.remove('active');
+              }
+          };
+      </script>
 </body>
 </html>
