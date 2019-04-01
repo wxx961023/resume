@@ -8,54 +8,91 @@
 <body>
     <header></header>
     <main>
-        <div class="wrapper" id="mainXXX"></div>
+        <div class="wrapper" id="main"></div>
     </main>
     <footer></footer>
     <script>
+        // 1.初始化数据
         var keys = {
             '0': {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
             '1': {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
             '2': {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
             'length': 3
         }
-        var hash = {'q':'qq.com','w':'weibo.com','e':'ele.me','t':'taobao.com'
+        var hash = {'q':'qq.com','g':'oogle.com','i':'iqiyi.com','w':'weibo.com','e':'ele.me','t':'taobao.com','z':'zhihu.com','b':'baidu.com','m':'mcdonalds.com.cn'
         }
-        var hasnInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+        // 取出 localStorage 中的 zzz 对应的 hash 
+        var hasnInLocalStorage = getFromLocalStorgate('zzz')
         if(hasnInLocalStorage){
             hash = hasnInLocalStorage
         }
-        index = 0
+        
+
+
+        // 2. 生成键盘
+        // 遍历 keys，生成 kbd 标签
+        var index = 0
         while(index < keys['length']){
-            divXXX = document.createElement('div')
-            mainXXX.appendChild(divXXX)
-            row = keys[index] //第一个数组 第二个数组 第三个数组
-            index2 = 0
+            var div = tag('div')
+            div.className = 'row'
+            main.appendChild(div)
+            var row = keys[index] //第一个数组 第二个数组 第三个数组
+            var index2 = 0
             while(index2 < row['length']){  // 0-9 0-8 0-6
-                kbdXXX = document.createElement('kbd')
-                kbdXXX.textContent = row[index2]
-                buttonX = document.createElement('button')
-                buttonX.textContent = '编辑'
-                buttonX.id = row[index2]
-                buttonX.onclick = function(xssdsada){
-                    key = xssdsada['target']['id'] // 用户按的按钮
+                var kbd = tag('kbd')
+                var span = tag('span')
+                span.textContent = row[index2]
+                span.className = 'text'
+                kbd.appendChild(span)
+                kbd.className = 'key'
+                var button = tag('button')
+                button.textContent = '编辑'
+                button.id = row[index2]
+                var img = tag('img')
+                if(hash[row[index2]]){
+                    img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+                }else{
+                    img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
+                img.onerror = function(xxx){
+                    xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
+
+
+                button.onclick = function(xssdsada){
+                    var button2 = xssdsada['target']
+                    var img2 = button2.previousSibling //获取哥哥的图片
+                    var key = button2['id'] // 用户按的按钮
                     x = prompt('给我一个网址') //
                     hash[key] = x // hash 哈希变更
+                    img2.src = 'http://' + x + '/favicon.ico'
+                    img2.onerror = function(xxx){
+                    xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
                     localStorage.setItem('zzz',JSON.stringify(hash))
                     console.log(hash)
                 }
-                kbdXXX.appendChild(buttonX)
-                divXXX.appendChild(kbdXXX)
+                kbd.appendChild(img)
+                kbd.appendChild(button)
+                div.appendChild(kbd)
                 index2 = index2 + 1
             }
             index = index + 1
         }
-
+        // 3. 监听键盘
         document.onkeypress = function(xssdsada){
-            key = xssdsada['key'] //知道用户按什么键
-            website  = hash[key] //得到这个键对应的网站
+            var key = xssdsada['key'] //知道用户按什么键
+            var website  = hash[key] //得到这个键对应的网站
             // console.log(website)
             // location.href = 'http://' + website
             window.open('http://' + website, '_blank')
+        }
+
+        function getFromLocalStorgate(name){
+            return JSON.parse(localStorage.getItem(name) || 'null')
+        }
+        function tag(tagName){
+            return document.createElement(tagName)
         }
     </script>
 </body>
