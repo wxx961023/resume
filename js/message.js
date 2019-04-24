@@ -16,10 +16,11 @@
         save: function (name, content) {
             var Message = AV.Object.extend('Message');
             var message = new Message();
-            message.save({
+            return message.save({
                 'name': name,
                 'content': content
             })
+
         }
     }
 
@@ -56,15 +57,14 @@
             }.bind(this))//用bind 将this 绑定到function里面
         },
         saveMessage: function () {
-            console.log(1)
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            this.model.save(name, content).then(function (object) {
+            this.model.save(name, content)
+            .then(function(object){
                 let li = document.createElement('li')
                 li.innerText = `${object.attributes.name}: ${object.attributes.content}`
-                let messageList = document.querySelector('#messageList')
-                messageList.appendChild(li)
+                this.messageList.appendChild(li)
                 myForm.querySelector('input[name=content]').value = ''
             })
         }
